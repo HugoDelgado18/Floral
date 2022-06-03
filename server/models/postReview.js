@@ -2,19 +2,17 @@ import mongoose from 'mongoose';
 
 const reviewSchema = mongoose.Schema({
    name: String,
-   rating: {
-     type: Number,
-     required: {$lte: 5}
-   },
+   rating: Number,
    content: String
  });
 
  const Review = mongoose.model("Review", reviewSchema);
 
-
-export default Review;
  // const review = new Review({
- //   name: Leah,
+ //   name: "Leah",
  //   rating: 5,
  //   content: "This place is great!!"
  // })
+
+
+export default Review;

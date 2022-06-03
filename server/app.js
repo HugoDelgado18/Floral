@@ -18,8 +18,8 @@ const PORT = process.env.PORT || 5000;
 main().catch(err => console.log(err));
 
 async function main(){
-  // mongoose.connect(`${process.env.ATLAS_KEY}`)
-  mongoose.connect(CONNECTION_URL);
+  mongoose.connect(process.env.ATLAS_KEY)
+  // mongoose.connect(CONNECTION_URL);
 };
 
 
