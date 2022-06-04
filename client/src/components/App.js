@@ -9,6 +9,7 @@ import Review from "./reviews/Review.js";
 
 
 function App() {
+  const [ state, setState ] = useState("")
 
   return (
     <div className="App">
