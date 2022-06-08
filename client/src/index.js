@@ -6,12 +6,14 @@ import {
   Route
 } from "react-router-dom";
 import App from './components/App.js';
+import NewReviewForm from './components/reviews/ReviewCreation.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
+      <Route path="/review/new" element={<NewReviewForm/>} />
     </Routes>
   </BrowserRouter>
 

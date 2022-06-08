@@ -1,5 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 import FormControl from '@mui/material/FormControl';
 import Rating from '@mui/material/Rating';
 import InputLabel from '@mui/material/InputLabel';
@@ -13,9 +15,10 @@ function ReviewCreation(){
         }}
         noValidate
         >
-      <p>Make your review!</p>
+      <Grid container spacing={2}>
       <FormControl variant='standard'>
-        <InputLabel>Make Your Review!</InputLabel>
+        <Typography>Make Your Review!</Typography>
+        <InputLabel></InputLabel>
 
 
           <input
@@ -29,6 +32,7 @@ function ReviewCreation(){
           />
           <button type="submit"> submit </button>
       </FormControl>
+      </Grid>
       </Box>
   );
 }
