@@ -107,6 +107,7 @@ function Header() {
                   </Button>
                 ))}
               </Box>
+              <Button color='inherit'> Login / Register </Button>
             </Toolbar>
           </Container>
         </AppBar>

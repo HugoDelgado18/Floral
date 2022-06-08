@@ -1,10 +1,10 @@
-import postReview from '../models/postReview.js';
+import Review from '../models/postReview.js';
 
 
 export const getReviews = async (req, res) => {
     try {
 
-      const postReviews = await postReview.find();
+      const postReviews = await Review.find();
 
       console.log(postReviews);
 
@@ -16,14 +16,14 @@ export const getReviews = async (req, res) => {
   }
 
 export const createReviews = async (req, res) => {
-  const review = req.body;
+  const reviewDetails = req.body;
 
-  const newReview = new postReview(review)
-  
+  const review = new Review(reviewDetails)
+
     try {
-      await newReview.save();
+      await review.save();
 
-      res.status(200).json(newReview)
+      res.status(200).json(review)
     } catch (error) {
 
       res.status(409).json({message: error.message})
