@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+// import FileBase from 'react-file-base64';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
@@ -7,34 +10,51 @@ import Rating from '@mui/material/Rating';
 
 function ReviewCreation(){
   const [reviewData, setReviewData ] = useState({
-    reviewer: '',
+    name: '',
     rating: 0,
     content: ''
   })
   const [starCount, setStarCount] =  useState(0);
 
+  const handleSubmit = () => {
+
+  }
 
 
   return (
-        <Paper >
+      <Box
+        sx={{
+          display: "flex",
+          flexWrap:'wrap',
+          height: "200px",
+          width: "600px"
+        }}
+        >
+        <Grid sx={{flexGrow: 2}} container spacing={1}>
+        <Paper variant="outlined" elevation={3} >
           <form autoComplete="off" noValidate onSubmit={handleSubmit}>
             <Typography variant='h6'>Leave your review</Typography>
+            <Grid spacing={4}>
+              <Rating
+                 name="simple-controlled"
+                 value={starCount}
+                 onChange={(e, newValue) => {
+                   setStarCount(newValue);
+                   setReviewData({ ...reviewData, rating: e.target.value })
+                 }}
+                 size="large"
+                  />
+                </Grid>
+                <Grid spacing={4}>
             <TextField
-              name="Reviewer"
+              name="name"
               variant="outlined"
-              label="Reviewer"
+              label="name"
               fullWidthvalue={reviewData.reviewer}
-              onChange={(e) => setReviewData({ ...reviewData, reviewer: e.target.value})}
+              onChange={(e) => setReviewData({ ...reviewData, name: e.target.value})}
                />
-             <Rating
-                name="simple-controlled"
-                value={starCount}
-                onChange={(e, newValue) => {
-                  setStarCount(newValue);
-                  setReviewData({ ...reviewData, rating: e.target.value })
-                }}
-                size="small"
-                 />
+             </Grid>
+             <Grid spacing={4}>
               <TextField
                  name="content"
                  variant="outlined"
@@ -42,9 +62,12 @@ function ReviewCreation(){
                  fullWidthvalue={reviewData.content}
                  onChange={(e) => setReviewData({ ...reviewData, content: e.target.value})}
                   />
-             <Button>Submit</Button>
+              </Grid>
+             <Button variant='contained' color="primary" size="large" type="submit" fullWidth>Submit</Button>
           </form>
         </Paper>
+        </Grid>
+      </Box>
   );
 }
 export default ReviewCreation;

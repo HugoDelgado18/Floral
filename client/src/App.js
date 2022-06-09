@@ -5,7 +5,7 @@ import axios from 'axios';
 import Container from '@mui/material/Container';
 import Header from "./components/header/Header.js";
 import Review from "./components/reviews/Review.js";
-
+import ReviewForm from "./components/reviews/ReviewCreation.js";
 
 
 
@@ -24,6 +24,7 @@ const App = () => {
       <Header/>
       <Container maxWidth="sm">
       <Review />
+      <ReviewForm />
       </Container>
     </div>
   );
