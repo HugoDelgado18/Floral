@@ -1,39 +1,50 @@
-import React from 'react';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
+import React, { useState } from 'react';
+import Paper from '@mui/material/Paper';
+import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import FormControl from '@mui/material/FormControl';
+import Button from '@mui/material/Button';
 import Rating from '@mui/material/Rating';
-import InputLabel from '@mui/material/InputLabel';
 
 function ReviewCreation(){
+  const [reviewData, setReviewData ] = useState({
+    reviewer: '',
+    rating: 0,
+    content: ''
+  })
+  const [starCount, setStarCount] =  useState(0);
+
+
+
   return (
-      <Box
-        component="form"
-        sx={{
-          '& > :not(style)': {m: 1}
-        }}
-        noValidate
-        >
-      <Grid container spacing={2}>
-      <FormControl variant='standard'>
-        <Typography>Make Your Review!</Typography>
-        <InputLabel></InputLabel>
-
-
-          <input
-            name="title"
-            placeholder="Title"
-          />
-          <textarea
-            name="content"
-            placeholder="What's your review..."
-            rows="3"
-          />
-          <button type="submit"> submit </button>
-      </FormControl>
-      </Grid>
-      </Box>
+        <Paper >
+          <form autoComplete="off" noValidate onSubmit={handleSubmit}>
+            <Typography variant='h6'>Leave your review</Typography>
+            <TextField
+              name="Reviewer"
+              variant="outlined"
+              label="Reviewer"
+              fullWidthvalue={reviewData.reviewer}
+              onChange={(e) => setReviewData({ ...reviewData, reviewer: e.target.value})}
+               />
+             <Rating
+                name="simple-controlled"
+                value={starCount}
+                onChange={(e, newValue) => {
+                  setStarCount(newValue);
+                  setReviewData({ ...reviewData, rating: e.target.value })
+                }}
+                size="small"
+                 />
+              <TextField
+                 name="content"
+                 variant="outlined"
+                 label="content"
+                 fullWidthvalue={reviewData.content}
+                 onChange={(e) => setReviewData({ ...reviewData, content: e.target.value})}
+                  />
+             <Button>Submit</Button>
+          </form>
+        </Paper>
   );
 }
 export default ReviewCreation;
