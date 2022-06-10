@@ -21,10 +21,11 @@ const App = () => {
 
   return (
     <div className="App">
+      <Container className='Header'>
       <Header/>
       <Container maxWidth="sm">
       <Review />
-      <ReviewForm />
+      </Container>
       </Container>
     </div>
   );

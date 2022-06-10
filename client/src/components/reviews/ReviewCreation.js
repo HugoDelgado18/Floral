@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { createReviews } from '../../actions/reviews';
 // import FileBase from 'react-file-base64';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -15,9 +17,12 @@ function ReviewCreation(){
     content: ''
   })
   const [starCount, setStarCount] =  useState(0);
+  const dispatch = useDispatch();
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
+    dispatch(createReviews(reviewData))
   }
 
 
@@ -50,7 +55,8 @@ function ReviewCreation(){
               name="name"
               variant="outlined"
               label="name"
-              fullWidthvalue={reviewData.reviewer}
+              fullWidth
+              value={reviewData.reviewer}
               onChange={(e) => setReviewData({ ...reviewData, name: e.target.value})}
                />
              </Grid>
@@ -59,7 +65,8 @@ function ReviewCreation(){
                  name="content"
                  variant="outlined"
                  label="content"
-                 fullWidthvalue={reviewData.content}
+                 fullWidth
+                 value={reviewData.content}
                  onChange={(e) => setReviewData({ ...reviewData, content: e.target.value})}
                   />
               </Grid>
