@@ -7,10 +7,10 @@ import Rating from '@mui/material/Rating';
 
 
 function ReviewCard(props){
-
+// style={ current !== index ? { display: 'hidden' } : { display: "none" }}
 
   return (
-      <Card sx={{ minWidth: 500 }}  >
+      <Card sx={props.position !== props.key ? { display: 'hidden' } : { display: "none" }}  >
         <CardContent>
           <Typography color="text.secondary" align='center' >
             {props.review.name}

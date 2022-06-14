@@ -1,4 +1,4 @@
-import React, { useState, useRef, useReducer } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import ReviewCard from './ReviewCard.js';
 import Box from '@mui/material/Box';
@@ -7,18 +7,8 @@ import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutl
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 import Slide from '@mui/material/Slide';
 
-const initialState = { count: 0 };
 
-function reducer(state, action) {
-  switch(action.type){
-    case 'increment':
-      return { count: state.count + 1 };
-    case 'decrement':
-      return { count: state.count - 1 };
-    default:
-      return state;
-  }
-}
+const delay = 2500;
 
 const handleChange = () => {
 
@@ -29,20 +19,43 @@ let reveal = 'hidden';
 function Review(){
     const reviews = useSelector((state) => state.reviews)
     const [current, setCurrent] = useState(0);
-    const [state, dispatch] = useReducer(reducer, initialState)
+    const [test, setTest] = useState(reviews);
+    const timeoutRef = React.useRef(null);
     const length = reviews.length;
+
+function resetTimeout() {
+  if (timeoutRef.current) {
+    clearTimeout(timeoutRef.current);
+  }
+}
+
+useEffect(() => {
+  resetTimeout();
+  timeoutRef.current = setTimeout(
+    () =>
+    setCurrent((prevIndex) =>
+      prevIndex === reviews.length - 1 ? 0 : prevIndex + 1
+    ),
+    delay
+  );
+
+  return () => {
+    resetTimeout();
+  };
+}, [current]);
+
 
   return (
     <div>
-      <Box sx={{ width: "100%", height: '20%' }}>
-      <Typography align="center" variant="h2"> Reviews </Typography>
-      <Box sx={{ display: 'flex', flexDirection: 'row', position: 'relative', justifyContent: 'center' }}>
-      <ArrowBackIosNewOutlinedIcon className='left-arrow' onClick={handleChange} />
+      <Box sx={{ left: '25%'  }}>
+      <Typography align="center" variant="h2"> Reviews {current} </Typography>
+      <ArrowBackIosNewOutlinedIcon className='left-arrow' onClick={() => setCurrent(current - 1)} />
+      <Box sx={{ display: 'flex', flexDirection: 'row', position: 'relative', justifyContent: 'center' }} >
       {reviews.map((review, index) => {
-           return <ReviewCard style={ index !== state ? {display:'none'} : ''  }  review={review} key={index} />
+           return <ReviewCard position={current} review={review} key={index} />
       })}
-      <ArrowForwardIosOutlinedIcon className='right-arrow' />
       </Box>
+      <ArrowForwardIosOutlinedIcon className='right-arrow' onClick={() => setCurrent(current + 1)} />
       </Box>
     </div>
   );
