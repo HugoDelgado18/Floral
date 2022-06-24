@@ -10,7 +10,7 @@ function ReviewCard(props){
 // style={ current !== index ? { display: 'hidden' } : { display: "none" }}
 
   return (
-      <Card sx={props.position !== props.key ? { display: 'hidden' } : { display: "none" }}  >
+      <Card sx={{width: '100%'}} >
         <CardContent>
           <Typography color="text.secondary" align='center' >
             {props.review.name}
