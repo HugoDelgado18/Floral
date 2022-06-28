@@ -10,6 +10,7 @@ import ReviewForm from "./components/reviews/ReviewCreation.js";
 
 
 
+
 const App = () => {
   const dispatch = useDispatch();
 
@@ -20,10 +21,10 @@ const App = () => {
 
 
   return (
-    <div className="App">
-      <Container className='Header'>
+    <div className="App" style={{ backgroundColor: 'rgb(218, 215, 205)'}}>
+      <Container className='Header' maxWidth="xl" disableGutters={true} >
       <Header/>
-      <Container maxWidth="sm">
+      <Container maxWidth="lg">
       <Review />
       </Container>
       </Container>

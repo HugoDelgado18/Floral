@@ -10,12 +10,12 @@ function ReviewCard(props){
 // style={ current !== index ? { display: 'hidden' } : { display: "none" }}
 
   return (
-      <Card sx={{width: '100%'}} >
+      <Card sx={{width: '100%', backgroundColor: 'rgb(163, 177, 138)'}} >
         <CardContent>
           <Typography color="text.secondary" align='center' >
             {props.review.name}
           </Typography>
-          <Rating value={props.review.rating} readOnly  />
+          <Rating value={props.review.rating} readOnly sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}  />
           <Typography variant="h5" align='center'>
             {props.review.content}
           </Typography>

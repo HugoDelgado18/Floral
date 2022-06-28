@@ -29,9 +29,8 @@ function Header() {
     };
 
   return (
-    <header>
-        <AppBar position="static" >
-          <Container maxidth="xl">
+        <AppBar position="static" elevation={0} color="transparent" >
+          <Container maxidth="lg">
             <Toolbar disableGutters>
               <RiceBowlOutlinedIcon />
               <Typography
@@ -111,7 +110,6 @@ function Header() {
             </Toolbar>
           </Container>
         </AppBar>
-    </header>
   );
 }
 
