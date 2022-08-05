@@ -3,9 +3,11 @@ import { useDispatch } from 'react-redux';
 import { getReviews } from './actions/reviews.js';
 import axios from 'axios';
 import Container from '@mui/material/Container';
-import Header from "./components/header/Header.js";
+import Header from "./components/Header.js";
 import Review from "./components/reviews/Review.js";
-import ReviewForm from "./components/reviews/ReviewCreation.js";
+// import ReviewForm from "./components/reviews/ReviewCreation.js";
+import OrderHome from "./components/OrderHome.js"
+import AboutBox from './components/AboutBox.js';
 
 
 
@@ -21,15 +23,28 @@ const App = () => {
 
 
   return (
-    <div className="App" style={{ backgroundColor: 'rgb(218, 215, 205)'}}>
-      <Container className='Header' maxWidth="xl" disableGutters={true} >
+    <div style={{ backgroundColor: 'rgb(255,254,254)'}}>
       <Header/>
+      <OrderHome />
+      <AboutBox />
       <Container maxWidth="lg">
       <Review />
       </Container>
-      </Container>
+
     </div>
   );
 }
 
 export default App;
+
+
+const styles = {
+  navbarContainer: {
+    zIndex: 1,
+  },
+  quickOrderContainer: {
+    zIndex: 2,
+  },
+}
+
+
