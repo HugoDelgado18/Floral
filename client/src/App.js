@@ -39,12 +39,7 @@ export default App;
 
 
 const styles = {
-  navbarContainer: {
-    zIndex: 1,
-  },
-  quickOrderContainer: {
-    zIndex: 2,
-  },
+
 }
 
 
