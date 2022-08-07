@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/Floral/static/js/main.121912fc.js",
+    "main.js": "/Floral/static/js/main.5878d304.js",
     "static/media/coffee-image.jpg": "/Floral/static/media/coffee-image.b98f0f90dfa4e4837b6b.jpg",
     "index.html": "/Floral/index.html",
-    "main.121912fc.js.map": "/Floral/static/js/main.121912fc.js.map"
+    "main.5878d304.js.map": "/Floral/static/js/main.5878d304.js.map"
   },
   "entrypoints": [
-    "static/js/main.121912fc.js"
+    "static/js/main.5878d304.js"
   ]
 }
