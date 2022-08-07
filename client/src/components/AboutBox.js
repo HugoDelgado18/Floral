@@ -24,16 +24,18 @@ const styles = {
     listHolder: {
         listStyle: 'none',
         margin: 0,
-        paddingTop: 150,
-        paddingBottom: 140,
-        paddingLeft: 300,
+        paddingTop: "7%",
+        paddingBottom: "7%",
+        paddingLeft: "15%",
     },
     containerText: {
         margin: 0,
         paddingBottom: 10,
         color: 'white', 
-        fontFamily: 'fantasy',
-        fontSize: 30,
+        fontFamily: "'Poppins', sans-serif",
+        fontWeight: "Bold",
+        fontWieght: 700,
+        fontSize: 40,
         letterSpacing: 2, 
     },
     

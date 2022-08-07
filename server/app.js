@@ -16,12 +16,15 @@ app.use(bodyParser.json({extended: true}));
 app.use(cors());
 app.use('/reviews', reviewRoutes);
 
-const PORT = process.env.PORT || 5000;
+const safePORT = process.env.ATLAS_KEY || 3002;
 
 main().catch(err => console.log(err));
 
 async function main(){
-  mongoose.connect(process.env.ATLAS_KEY)
+  // mongoose.connect(process.env.ATLAS_KEY)
+  mongoose.connect(safePORT)
+  .then(() => app.listen(safePORT, () => console.log(`Successfully opened port: ${safePORT}`)))
+
   // mongoose.connect(CONNECTION_URL);
 };
 
@@ -30,7 +33,3 @@ async function main(){
   app.use(errorHandlerMiddleware);
 
 
-
-  app.listen( PORT, function(){
-    console.log(`Successfully opened port: ${PORT}`);
-  })

@@ -50,7 +50,9 @@ const styles = {
     backgroundColor: 'transparent',
   },
   logo: {
-    fontFamily: 'fantasy',
+    fontFamily: "'Poppins', sans-serif",
+    fontWeight: "Bold",
+    fontWieght: 700,
     fontSize: 25,
     color: 'grey',
     padding: "10px 150px 10px",
