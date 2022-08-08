@@ -24,8 +24,8 @@ const styles = {
     listHolder: {
         listStyle: 'none',
         margin: 0,
-        paddingTop: "7%",
-        paddingBottom: "7%",
+        paddingTop: "8%",
+        paddingBottom: "8%",
         paddingLeft: "15%",
     },
     containerText: {

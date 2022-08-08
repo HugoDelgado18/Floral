@@ -6,7 +6,7 @@ import React from 'react';
 
 
 
-const pages = ["Home", "Menu", "Order", "Contact Us"];
+const pages = ["Home", "Menu", "Book", "Contact"];
 
 function Header() {
 
@@ -25,9 +25,12 @@ function Header() {
       <ul style={styles.menubar}>
       {pages.map((page, index ) => {
         return (
-          <li style={styles.menuitems}>
+
+          <a style={styles.anchor} href={'/' + page} >
+          <li key={index} style={styles.menuitems}>
             {page}
           </li>
+          </a>
         )
       })}
       </ul>
@@ -69,5 +72,8 @@ const styles = {
     flex: 1,
     padding: 15,
     color: 'grey',
-  }
+  },
+  anchor: {
+    textDecoration: 'none',
+  },
 }
