@@ -6,18 +6,17 @@ import { menuItems } from './menu/menuItems';
 
 
 function MenuPreview() {
-    console.log(menuItems.snacks)
-    console.log('please show up')
+
     return (
         <div style={styles.container}>
             <div>
-                <h1>Explore the garden.</h1>
+                <h1 style={styles.title}>Explore the garden.</h1>
             </div>
             <div style={styles.menuItemsContainer}>
             {menuItems.snacks.map((items, index) => {
                 return (
                     
-                    <div key={index} style={{...styles.itemsContainer, alignItems: index <= 3 ? 'flex-start' : 'flex-end' }}>
+                    <div key={index} style={{...styles.itemsContainer }}>
                     <div style={styles.titleContainer}>
                     <p style={styles.titleText}>{items.title}</p>
                     <p style={styles.itemsText}>{items.price}</p>
@@ -29,7 +28,7 @@ function MenuPreview() {
             })}
             </div>
 
-            <button style={styles.menuBtn}>See Menu</button>
+            <a href='/Menu'><button style={styles.menuBtn}>See Menu</button></a>
 
 
         </div>
@@ -60,14 +59,19 @@ const styles = {
         alignItems: 'flex-end',
         marginLeft: '50%',
     },
+    title: {
+        paddingLeft: '5%',
+    },
     menuItemsContainer: {
         width: '100%',
         display: 'flex',
         flexWrap: 'wrap',
+        paddingLeft: '5%',
     },
     itemsContainer: {
-        width: '30%',
+        width: '40%',
         paddingTop: '10%',
+        paddingLeft: '5%',
         paddingBottom: '5%',
     },
     menuBtn: {
@@ -79,5 +83,7 @@ const styles = {
         paddingBottom: '1.5%',
         paddingLeft: '5%',
         paddingRight: '5%',
+        marginTop: '2%',
+        marginLeft: '6%',
     }
 }

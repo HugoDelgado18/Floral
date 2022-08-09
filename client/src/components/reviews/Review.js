@@ -11,6 +11,7 @@ import Carousel from 'react-material-ui-carousel'
 
 function Review(){
     const reviews = useSelector((state) => state.reviews);
+    console.log(reviews)
 
   return (
     <div>

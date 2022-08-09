@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from '@mui/material/Link';
 // import Icon from '@mui/material/Icon';
 // import RiceBowlOutlinedIcon from '@mui/icons-material/RiceBowlOutlined';
 
@@ -6,34 +7,37 @@ import React from 'react';
 
 
 
-const pages = ["Home", "Menu", "Book", "Contact"];
+const pages = ["Home", "Menu", "Book"];
 
 function Header() {
+  
 
   return (
-   
+
     <nav style={styles.navbar}>
       {/*  --- Logo  --- */}
       <div>
-      <a href='/' style={styles.logo}> FLORAL. </a>
+        <a href='/' style={styles.logo}> FLORAL. </a>
       </div>
       {/* --- inbetween space --- */}
       <div></div>
       {/* --- inbetween space --- */}
-      
-      {/* menu-items */}
-      <ul style={styles.menubar}>
-      {pages.map((page, index ) => {
-        return (
 
-          <a style={styles.anchor} href={'/' + page} >
-          <li key={index} style={styles.menuitems}>
-            {page}
-          </li>
-          </a>
-        )
-      })}
-      </ul>
+      {/* menu-items */}
+      <div style={styles.menubar}>
+        <Link
+        style={styles.menuitems}
+        underline='hover'
+        href='/' >
+          Home
+        </Link>
+        <Link style={styles.menuitems} underline='hover' href='/Menu' >
+          Menu
+        </Link>
+        <Link style={styles.menuitems} underline='hover' href='/Book' >
+          Book
+        </Link>
+      </div>
 
 
 
@@ -47,10 +51,12 @@ export default Header;
 const styles = {
   navbar: {
     display: 'flex',
-    position: 'sticky',
+    position: 'fixed',
     alignItems: 'center',
     justifyContent: 'space-between',
     backgroundColor: 'transparent',
+    backgroundColor: '#191E20',
+    width: '100%',
   },
   logo: {
     fontFamily: "'Poppins', sans-serif",
@@ -58,22 +64,24 @@ const styles = {
     fontWieght: 700,
     fontSize: 25,
     color: 'grey',
-    padding: "10px 150px 10px",
+    paddingLeft: '280%',
     textDecoration: 'none',
 
   },
   menubar: {
-    display: 'block',
-    padding: '10px 120px 10px',
+    display: 'flex',
+    // padding: '10px 120px 10px',
+    paddingTop: '1%',
+    paddingBottom: '1%',
+    paddingRight: '20%'
   },
   menuitems: {
-    display: 'inline',
+    // display: 'inline',
+    flexDirection: 'row',
     listStyle: 'none',
     flex: 1,
     padding: 15,
     color: 'grey',
   },
-  anchor: {
-    textDecoration: 'none',
-  },
+
 }

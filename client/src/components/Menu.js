@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from './Header';
 import { menuItems } from './menu/menuItems';
+import BookTableSection from './BookTableSection';
+import Footer from './Footer';
 // import url from '../images/menu-cover.jpeg';
 
 
@@ -46,7 +48,8 @@ function Menu() {
             })}
             </div>
             </div>
-            
+            <BookTableSection/>
+            <Footer/>
         </div>
     );
 };
@@ -60,8 +63,10 @@ const styles = {
         width: '100%'
     },
     MenuTitleText: {
+        paddingTop: '10%',
         paddingLeft: '15%',
         paddingBottom: '5%',
+        marginTop: 0,
     },
     snacksContainer: {
         paddingLeft: '15%',

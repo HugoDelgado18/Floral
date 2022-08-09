@@ -29,41 +29,26 @@ export default OrderHome;
 const styles = {
   container: {
     backgroundImage: `url(${coffee})`,
-    height: 900,
+    width: '100%',
+    paddingBottom: '13.9%',
     display: 'flex',
-    // justifyContent: 'center',
-    // alignItems: 'center',
   },
   containerText: {
-    // position: 'absolute',
-    // marginRight: 730,
-    // paddingLeft: 20,
-    fontSize: 200,
+    fontSize: 150,
     fontFamily: "'Poppins', sans-serif",
     fontWeight: "Bold",
     fontWieght: 700,
     color: 'white',
     letterSpacing: '5px',
+    paddingLeft: '35%',
   },
   containerItems: {
     listStyle: 'none',
-    // height: '50%'
     marginTop: '20%',
   },
   containerAddress: {
-    marginLeft: 25,
+    paddingLeft: '35%',
     color: 'white',
   },
-  // orderButton: {
-  //   marginTop: 300,
-  //   marginRight: 15,
-  //   backgroundColor: 'transparent',
-  //   borderColor: 'white',
-  //   height: 40,
-  //   width: 130,
-  //   borderRadius: 15,
-  //   // fontFamily: '',
-  //   color: 'white',
-  //   fontSize: 20,
-  // }
+
 }

@@ -26,7 +26,7 @@ const styles = {
         margin: 0,
         paddingTop: "8%",
         paddingBottom: "8%",
-        paddingLeft: "15%",
+        paddingLeft: "12.5%",
     },
     containerText: {
         margin: 0,
